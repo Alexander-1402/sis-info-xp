@@ -1,0 +1,17 @@
+{
+  "name": "tdd-proyecto-xp",
+  "version": "1.0.0",
+  "description": "Proyecto TDD con Jest - Metodología XP",
+  "scripts": {
+    "test": "jest --verbose",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testMatch": ["**/tests/**/*.test.js"]
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}

@@ -31,3 +31,22 @@ function __clearStore() {
 }
 
 module.exports = { crearHU, obtenerHU, __clearStore };
+const _store = [];
+const PUNTOS_FIBONACCI = [1, 2, 3, 5, 8];
+
+function crearHU(datos) {
+  if (!datos.titulo?.trim()) return false;
+  if (!datos.descripcion?.trim()) return false;
+  if (!PUNTOS_FIBONACCI.includes(datos.puntos)) return false;
+  if (_store.some(h => h.titulo === datos.titulo)) return false;
+  _store.push({ ...datos });
+  return true;
+}
+
+function obtenerHU(titulo) {
+  return _store.find(h => h.titulo === titulo) ?? null;
+}
+
+function __clearStore() { _store.length = 0; }
+
+module.exports = { crearHU, obtenerHU, __clearStore };
